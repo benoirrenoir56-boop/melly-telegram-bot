@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8498663842:AAFv0_3m3c1Gwzme6oGc7RXWbkgX8DZ0QZ0';
-const OWNER_CHAT_ID = process.env.OWNER_CHAT_ID || '';
+const OWNER_CHAT_ID = process.env.OWNER_CHAT_ID || '8441367753';
 const PORT = process.env.PORT || 3000;
 
 // Serveur HTTP pour garder le bot actif sur Render
