@@ -168,7 +168,7 @@ bot.on('message', (msg) => {
         products.free_fire.items.forEach((item, index) => {
             ffMsg += `${index + 1}. ${item.amount} Diamants — ${item.price} FrCFA\n`;
         });
-        ffMsg += `\n📝 *Pour commander* : Envoyez "Commander FF [numéro du pack] [Votre ID Free Fire]"\nExemple : Commander FF 3 123456789`;
+        ffMsg += `\n🆔 *N'oubliez pas votre ID de joueur Free Fire* — il est indispensable pour la recharge.\n\n📝 *Pour commander* : Envoyez "Commander FF [numéro du pack] [Votre ID Free Fire]"\nExemple : Commander FF 3 123456789`;
         bot.sendMessage(chatId, ffMsg, { parse_mode: 'Markdown' });
         return;
     }
@@ -179,7 +179,7 @@ bot.on('message', (msg) => {
         products.blood_strike.items.forEach((item, index) => {
             bsMsg += `${index + 1}. ${item.amount} — ${item.price} FrCFA\n`;
         });
-        bsMsg += `\n📝 *Pour commander* : Envoyez "Commander BS [numéro du pack] [Votre ID]"\nExemple : Commander BS 2 987654321`;
+        bsMsg += `\n🆔 *N'oubliez pas votre ID de joueur Blood Strike* — il est indispensable pour la recharge.\n\n📝 *Pour commander* : Envoyez "Commander BS [numéro du pack] [Votre ID]"\nExemple : Commander BS 2 987654321`;
         bot.sendMessage(chatId, bsMsg, { parse_mode: 'Markdown' });
         return;
     }
@@ -190,7 +190,7 @@ bot.on('message', (msg) => {
         products.pubg.items.forEach((item, index) => {
             pubgMsg += `${index + 1}. ${item.amount} — ${item.price} FrCFA\n`;
         });
-        pubgMsg += `\n📝 *Pour commander* : Envoyez "Commander PUBG [numéro du pack] [Votre ID]"\nExemple : Commander PUBG 1 456789123`;
+        pubgMsg += `\n🆔 *N'oubliez pas votre ID de joueur PUBG Mobile* — il est indispensable pour la recharge.\n\n📝 *Pour commander* : Envoyez "Commander PUBG [numéro du pack] [Votre ID]"\nExemple : Commander PUBG 1 456789123`;
         bot.sendMessage(chatId, pubgMsg, { parse_mode: 'Markdown' });
         return;
     }
