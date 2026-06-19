@@ -90,9 +90,9 @@ const products = {
 };
 
 const payments = [
-    { name: "Wave", details: "Veuillez demander le numéro de dépôt." },
-    { name: "MTN Money", details: "Veuillez demander le numéro de dépôt." },
-    { name: "Orange Money", details: "Veuillez demander le numéro de dépôt." }
+    { name: "Wave", details: "0565271512" },
+    { name: "MTN Money", details: "0564686298" },
+    { name: "Orange Money", details: "0719347745" }
 ];
 
 const faq = [
@@ -197,7 +197,7 @@ bot.on('message', (msg) => {
 
     // Paiement
     if (userMessage === '6' || userMessage.includes('paiement') || userMessage === '6️⃣ paiement') {
-        let payMsg = `💰 *Moyens de Paiement Acceptés* 💰\n\n`;
+        let payMsg = `💰 *Moyens de Paiement Acceptés* 💰\n\nVeuillez effectuer votre dépôt sur l'un des numéros suivants :\n\n`;
         payments.forEach(p => {
             payMsg += `• *${p.name}* : ${p.details}\n`;
         });
