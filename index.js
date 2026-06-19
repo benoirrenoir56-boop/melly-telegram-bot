@@ -90,9 +90,9 @@ const products = {
 };
 
 const payments = [
-    { name: "Wave", details: "0565271512" },
-    { name: "MTN Money", details: "0564686298" },
-    { name: "Orange Money", details: "0719347745" }
+    { name: "Wave", details: "+225 0565271512" },
+    { name: "MTN Money", details: "+225 0564686298" },
+    { name: "Orange Money", details: "+225 0719347745" }
 ];
 
 const faq = [
