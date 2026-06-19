@@ -129,9 +129,27 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, getWelcomeMessage(name), { parse_mode: 'Markdown', ...getMainMenuKeyboard() });
 });
 
+// Gestion des preuves de paiement (photos / documents image)
+bot.on('photo', (msg) => {
+    const chatId = msg.chat.id;
+    const name = msg.from.first_name || 'Client';
+    const username = msg.from.username ? `@${msg.from.username}` : 'sans pseudo';
+
+    // Confirmation au client
+    bot.sendMessage(chatId, `✅ *Preuve de paiement reçue !*\n\nMerci ${name}. Votre capture a bien été transmise. Nous vérifions votre paiement et traitons votre commande dans les plus brefs délais. ⏱️`, { parse_mode: 'Markdown' });
+
+    // Transfert de la capture au propriétaire
+    if (OWNER_CHAT_ID) {
+        const photo = msg.photo[msg.photo.length - 1].file_id; // meilleure résolution
+        const legende = `💸 *Nouvelle preuve de paiement*\n\nDe : ${name} (${username})\nID : ${chatId}${msg.caption ? `\n\nMessage : "${msg.caption}"` : ''}\n\n_Veuillez vérifier et valider la commande._`;
+        bot.sendPhoto(OWNER_CHAT_ID, photo, { caption: legende, parse_mode: 'Markdown' });
+    }
+});
+
 // Gestion des messages
 bot.on('message', (msg) => {
     if (msg.text && msg.text.startsWith('/')) return; // Ignorer les commandes
+    if (msg.photo) return; // Les photos sont gérées par l'événement 'photo'
 
     const chatId = msg.chat.id;
     const text = msg.text || '';
